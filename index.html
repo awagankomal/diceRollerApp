@@ -83,7 +83,7 @@
           
                 <div class="dice"> 
                     <p class="Player2">Player 2</p> 
-                    <img class="dice-img" src="./Images/dice.png" id="dice_img2" 
+                    <img class="dice-img" src="./Images/dice.png" id="dice_img2">
                 </div> 
             </div> 
           
@@ -97,10 +97,14 @@
             
            
             function rollTheDice() { 
+               console.log("In func");
                 const dice_img1 =document.getElementById('dice_img1');
                 const dice_img2 =document.getElementById('dice_img2');
+                let randomNo1=Math.floor(Math.random() * 6) + 1;
+                let randomNo2=Math.floor(Math.random() * 6) + 1;
                 
                 switch(randomNo1){
+                    
                     case 1:
                         dice_img1.src="./Images/dice1.png"
                         break;
@@ -122,6 +126,7 @@
 
                       
                 }
+                console.log("switch1");
                 switch(randomNo2){
                     case 1:
                         dice_img2.src="./Images/dice1.png"
@@ -144,17 +149,21 @@
 
                       
                 }
+                console.log("switch1");
                 setInterval(2500);
   
                 if (randomNo1 === randomNo2) { 
+                    console.log("check=");
                   alert("Game Draw!")
                 } 
   
                 else if (randomNo1 < randomNo2) { 
+                    console.log("check <");
                     alert("Player2 wins!")
                 } 
   
                 else { 
+                    console.log("check >");
                     alert("Player1 wins!")
                 } 
             }
